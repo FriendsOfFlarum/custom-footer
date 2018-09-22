@@ -1,0 +1,53 @@
+#CustomFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+
+  .container {
+    display: flex;
+  }
+
+  &.showing {
+    .container {
+      pointer-events: all;
+    }
+  }
+
+  .Footer--Icons {
+    position: relative;
+    flex-shrink: 1;
+
+    i {
+      transition: opacity 500ms;
+      z-index: 999;
+      pointer-events: all;
+    }
+
+    .Footer--Show {
+      margin-right: -15px;
+      color:#7088a9;
+      cursor:pointer;
+      font-size: 1.5em;
+    }
+
+    .Footer--Hide {
+      color:#7088a9;
+      font-size: 1.5em;
+      cursor:pointer;
+    }
+
+    .hidden {
+      opacity: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+  }
+
+  .Footer--Content {
+    transition: height 500ms;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+}
