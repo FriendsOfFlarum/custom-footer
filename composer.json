@@ -11,6 +11,10 @@
     },
     "authors": [
         {
+            "name": "Connor Davis",
+            "email": "davis@produes.co"
+        },
+        {
             "name": "David Sevilla Martín",
             "email": "david.s@redevs.org",
             "role": "Developer"
