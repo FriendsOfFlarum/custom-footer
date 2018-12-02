@@ -1,12 +1,12 @@
 <?php
 
-/**
- *  This file is part of fof/custom-footer.
+/*
+ * This file is part of fof/secure-https.
  *
- *  Copyright (c) 2018 FriendsOfFlarum.
+ * Copyright (c) 2018 FriendsOfFlarum.
  *
- *  For the full copyright and license information, please view the LICENSE
- *  file that was distributed with this source code.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace FoF\CustomFooter\Listeners;
@@ -28,18 +28,21 @@ class LoadSettingsFromDatabase
 
     protected $settings;
 
-    public function __construct(SettingsRepositoryInterface $settings) {
+    public function __construct(SettingsRepositoryInterface $settings)
+    {
         $this->settings = $settings;
     }
 
-    public function subscribe(Dispatcher $events) {
+    public function subscribe(Dispatcher $events)
+    {
         $events->listen(Serializing::class, [$this, 'prepareApiAttributes']);
     }
 
-    public function prepareApiAttributes(Serializing $event) {
+    public function prepareApiAttributes(Serializing $event)
+    {
         if ($event->isSerializer(ForumSerializer::class)) {
             foreach ($this->fieldsToGet as $field) {
-                $key = $this->packagePrefix . $field;
+                $key = $this->packagePrefix.$field;
                 $event->attributes[$key] = $this->settings->get($key);
             }
         }
