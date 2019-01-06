@@ -20,6 +20,9 @@
             "role": "Developer"
         }
     ],
+    "replace": {
+        "davis/flarum-ext-customfooter": "*"
+    },
     "autoload": {
         "psr-4": {
             "FoF\\CustomFooter\\": "src/"
