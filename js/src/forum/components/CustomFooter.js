@@ -14,7 +14,7 @@ export default class CustomFooter extends Component {
         return (
             <div id="CustomFooter" className={this.open && 'showing'}>
                 <div className="container">
-                    <div className="Footer--Content" style={`height: ${this.open ? (app.forum.attribute('fof-custom-footer.height') || 50) : 0}px;`}>
+                    <div className="Footer--Content" style={`height: ${this.open ? app.forum.attribute('fof-custom-footer.height') || 50 : 0}px;`}>
                         {m.trust(app.forum.attribute('fof-custom-footer.text') || '')}
                     </div>
                     <div className="Footer--Icons">

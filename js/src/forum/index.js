@@ -1,10 +1,10 @@
-import app from 'flarum/app';
 import { extend } from 'flarum/extend';
-import HeaderPrimary from 'flarum/components/HeaderPrimary';
+import Application from 'flarum/Application';
+
 import CustomFooter from './components/CustomFooter';
 
-app.initializers.add('fof/custom-footer', () => {
-    extend(HeaderPrimary.prototype, 'init', function() {
+app.initializers.add('fof-custom-footer', () => {
+    extend(Application.prototype, 'mount', () => {
         const footer = document.createElement('div');
 
         m.mount(document.body.appendChild(footer), CustomFooter.component());
