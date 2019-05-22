@@ -1,9 +1,8 @@
 fof-custom-footer:
   admin:
     settings:
-      title: Kişiselleştirilmiş Alt Alan Konfigürasyonu
-
-      text: Alt alan için yazı.
-      height: Alt alan yüksekliği.
       css: CSS
+      height: Alt alan yüksekliği.
       js: JS
+      text: Alt alan için yazı.
+      title: Kişiselleştirilmiş Alt Alan Konfigürasyonu
