@@ -7,6 +7,6 @@ app.initializers.add('fof-custom-footer', () => {
     extend(Application.prototype, 'mount', () => {
         const footer = document.createElement('div');
 
-        m.mount(document.body.appendChild(footer), CustomFooter.component());
+        m.mount(document.body.appendChild(footer), CustomFooter);
     });
 });
