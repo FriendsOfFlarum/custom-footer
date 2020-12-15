@@ -11,19 +11,19 @@
 
 namespace FoF\CustomFooter;
 
+use Flarum\Api\Serializer\ForumSerializer;
 use Flarum\Extend;
-use FoF\Components\Extend\AddFofComponents;
-use Illuminate\Contracts\Events\Dispatcher;
 
 return [
-    new AddFofComponents(),
     (new Extend\Frontend('forum'))
         ->js(__DIR__.'/js/dist/forum.js')
         ->css(__DIR__.'/resources/less/forum.less'),
+
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js'),
+
     new Extend\Locales(__DIR__.'/resources/locale'),
-    function (Dispatcher $events) {
-        $events->subscribe(Listeners\LoadSettingsFromDatabase::class);
-    },
+
+    (new Extend\ApiSerializer(ForumSerializer::class))
+        ->mutate(Listeners\LoadSettingsFromDatabase::class),
 ];
