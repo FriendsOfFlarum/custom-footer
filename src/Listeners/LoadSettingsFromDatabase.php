@@ -11,10 +11,8 @@
 
 namespace FoF\CustomFooter\Listeners;
 
-use Flarum\Api\Event\Serializing;
 use Flarum\Api\Serializer\ForumSerializer;
 use Flarum\Settings\SettingsRepositoryInterface;
-use Illuminate\Contracts\Events\Dispatcher;
 
 class LoadSettingsFromDatabase
 {
@@ -33,18 +31,13 @@ class LoadSettingsFromDatabase
         $this->settings = $settings;
     }
 
-    public function subscribe(Dispatcher $events)
+    public function __invoke(ForumSerializer $serializer)
     {
-        $events->listen(Serializing::class, [$this, 'prepareApiAttributes']);
-    }
-
-    public function prepareApiAttributes(Serializing $event)
-    {
-        if ($event->isSerializer(ForumSerializer::class)) {
-            foreach ($this->fieldsToGet as $field) {
-                $key = $this->packagePrefix.$field;
-                $event->attributes[$key] = $this->settings->get($key);
-            }
+        foreach ($this->fieldsToGet as $field) {
+            $key = $this->packagePrefix.$field;
+            $attributes[$key] = $this->settings->get($key);
         }
+
+        return $attributes;
     }
 }
