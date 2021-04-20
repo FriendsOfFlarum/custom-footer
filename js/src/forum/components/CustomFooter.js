@@ -1,8 +1,8 @@
-import Component from 'flarum/Component';
+import Component from 'flarum/common/Component';
 
 export default class CustomFooter extends Component {
     oninit(vnode) {
-      super.oninit(vnode);
+        super.oninit(vnode);
         this.open = false;
 
         const js = app.forum.attribute('fof-custom-footer.js');
