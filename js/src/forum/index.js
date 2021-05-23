@@ -1,5 +1,5 @@
 import { extend } from 'flarum/common/extend';
-import ForumApplication from 'flarum/common/ForumApplication';
+import ForumApplication from 'flarum/forum/ForumApplication';
 
 import CustomFooter from './components/CustomFooter';
 
