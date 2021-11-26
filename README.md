@@ -6,10 +6,10 @@ A [Flarum](http://flarum.org) extension. Allows the Addition of a Custom Footer
 
 ### Installation
 
-Use [Bazaar](https://discuss.flarum.org/d/5151-flagrow-bazaar-the-extension-marketplace) or install manually with composer:
+Install manually with composer:
 
 ```sh
-composer require fof/custom-footer
+composer require fof/custom-footer:"*"
 ```
 
 ### Updating
