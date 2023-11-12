@@ -31,7 +31,7 @@ class LoadSettingsFromDatabase
         $this->settings = $settings;
     }
 
-    public function __invoke(ForumSerializer $serializer)
+    public function __invoke(ForumSerializer $serializer, $model, array $attributes): array
     {
         foreach ($this->fieldsToGet as $field) {
             $key = $this->packagePrefix.$field;
