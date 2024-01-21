@@ -20,8 +20,8 @@ export default class CustomFooter extends Component {
             {m.trust(app.forum.attribute('fof-custom-footer.text') || '')}
           </div>
           <div className="Footer--Icons">
-            <i className={`Footer--Show fa fa-info-circle ${this.open && 'hidden'}`} onclick={() => (this.open = true)} />
-            <i className={`Footer--Hide fa fa-caret-down ${!this.open && 'hidden'}`} onclick={() => (this.open = false)} />
+            <i className={`Footer--Show fas fa-info-circle ${this.open && 'hidden'}`} onclick={() => (this.open = true)} />
+            <i className={`Footer--Hide fas fa-caret-down ${!this.open && 'hidden'}`} onclick={() => (this.open = false)} />
           </div>
         </div>
       </div>
